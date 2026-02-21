@@ -14,9 +14,9 @@ const SOURCE_MAP = {
   'product-teaser': 'catalog',
   'product-recommendations': 'catalog',
   'product-list-page': 'search',
-  'search': 'search',
-  'header': 'commerce',
-  'footer': 'commerce',
+  search: 'search',
+  header: 'commerce',
+  footer: 'commerce',
 };
 
 /**
@@ -40,7 +40,8 @@ function tagBlockSources() {
  */
 export async function initInspector() {
   try {
-    await import('/demo-inspector/dist/demo-inspector.js');
+    // eslint-disable-next-line import/no-unresolved
+    await import('../demo-inspector/dist/demo-inspector.js');
     tagBlockSources();
     const el = document.createElement('demo-inspector');
     el.setAttribute('modes', 'mesh,eds');
